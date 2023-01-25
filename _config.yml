@@ -46,6 +46,6 @@ paginate_path: /page/:num
 
 gitalk:
   clientID: 1c53eeddb59629461138
-  clientSecret: 0588c39fd0574eb2212583ff4d90c421a99c9d60
+  clientSecret: b0edcab9460d42a971556e7624c06db83af92b67
   repo: rossea.github.io
   owner: rossea
