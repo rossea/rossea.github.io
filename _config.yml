@@ -44,8 +44,8 @@ sass:
 paginate: 8
 paginate_path: /page/:num
 
-# gitalk:
-#   clientID: 
-#   clientSecret: 
-#   repo: rossea.github.io
-#   owner: rossea
+gitalk:
+  clientID: 1c53eeddb59629461138
+  clientSecret: 0588c39fd0574eb2212583ff4d90c421a99c9d60
+  repo: rossea.github.io
+  owner: rossea
