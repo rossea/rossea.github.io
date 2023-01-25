@@ -22,3 +22,16 @@ You can find the source code for Jekyll at GitHub:
 - 文章数：{{ site.posts | size }}
 - <span id="busuanzi_container_site_uv">总访客数：<span id="busuanzi_value_site_uv"></span></span>
 - 最后构建：{{ site.time }}
+
+
+## 许可证
+
+若无特殊声明，本站所有文章均按照 [CC BY-SA 4.0 协议](https://creativecommons.org/licenses/by-sa/4.0/)发布。
+
+<div class="cc-by-sa-logo" aria-label="Creative Commons Attribution-ShareAlike">
+  <svg class="icon"><use xlink:href="/assets/icons.svg#creative-commons-brands" /></svg>
+  <svg class="icon"><use xlink:href="/assets/icons.svg#creative-commons-by-brands" /></svg>
+  <svg class="icon"><use xlink:href="/assets/icons.svg#creative-commons-sa-brands" /></svg>
+</div>
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
