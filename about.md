@@ -25,7 +25,9 @@ You can find the source code for Jekyll at GitHub:
 
 
 ## 许可证
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+  
 若无特殊声明，本站所有文章均按照 [CC BY-SA 4.0 协议](https://creativecommons.org/licenses/by-sa/4.0/)发布。
 
 <div class="cc-by-sa-logo" aria-label="Creative Commons Attribution-ShareAlike">
@@ -34,4 +36,4 @@ You can find the source code for Jekyll at GitHub:
   <svg class="icon"><use xlink:href="/assets/icons.svg#creative-commons-sa-brands" /></svg>
 </div>
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
