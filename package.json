@@ -1,0 +1,14 @@
+{
+  "name": "rossea.github.io",
+  "version": "0.1.0",
+  "description": "Personal website of Ruoxi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossea/rossea.github.io.git"
+  },
+  "author": "Ruoxi",
+  "bugs": {
+    "url": "https://github.com/rossea/rossea.github.io/issues"
+  },
+  "homepage": "https://rossea.github.io/"
+}

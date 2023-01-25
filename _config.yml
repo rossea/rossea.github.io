@@ -1,0 +1,51 @@
+# Welcome to Jekyll!
+
+title: rossea.github.io
+lang: en-US  # For correct hyphenation, we need set the language to en-US.
+baseurl: ""
+url: https://rossea.github.io/
+# google_analytics: UA-132846370-1
+copyright: © 2023--2028 Ruoxi
+github_username: rossea
+
+incremental: true
+permalink: :year-:month-:day-:title/
+exclude:
+  - .eslintrc.json
+  - .gitattributes
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - package.json
+  - README.md
+  - _draft/
+  - .vscode/
+  - node_modules/
+  - src/
+  - temp/
+  - vendor/
+
+markdown: kramdown
+
+theme: minima
+minima:
+  social_links:
+    email: dxln@163.com
+    github: rossea
+    # twitter: 
+    # telegram: 
+    rss: rss
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+sass:
+    style: compressed
+paginate: 8
+paginate_path: /page/:num
+
+# gitalk:
+#   clientID: 
+#   clientSecret: 
+#   repo: rossea.github.io
+#   owner: rossea
