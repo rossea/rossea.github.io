@@ -4,7 +4,7 @@ title: rossea.github.io
 lang: en-US  # For correct hyphenation, we need set the language to en-US.
 baseurl: ""
 url: https://rossea.github.io/
-# google_analytics: UA-132846370-1
+google_analytics: G-Y6ZL8Z19WD #数据流ID: 4450851715 衡量 ID: G-Y6ZL8Z19WD
 copyright: © 2023--2028 Ruoxi
 github_username: rossea
 
