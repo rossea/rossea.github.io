@@ -16,3 +16,9 @@ You can find the source code for Jekyll at GitHub:
 
 
 [jekyll-organization]: https://github.com/jekyll
+
+## 统计
+
+- 文章数：{{ site.posts | size }}
+- <span id="busuanzi_container_site_uv">总访客数：<span id="busuanzi_value_site_uv"></span></span>
+- 最后构建：{{ site.time }}
