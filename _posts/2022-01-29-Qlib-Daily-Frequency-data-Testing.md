@@ -7,7 +7,7 @@ description: 本文档旨在记录测试Qlib使用日频量价因子LightGBM策�
 
 ## 引言
 
-LightGBM\cite{Ke2017}是在GBDT算法框架下的一种改进实现，是一种基于决策树算法\cite{Meng2016}的快速、分布式、高性能的GBDT框架。“Light”主要体现在三个方面，即更少的样本、更少的特征、更少的内存，分别通过单边梯度采样（Gradient-based One-Side Sampling）、互斥特征合并（Exclusive Feature Bundling）、直方图算法（Histogram）三项技术实现。“微矿 Qlib”\cite{yang2020qlib}是微软亚洲研究院2020年12月9日正式发布的AI量化投资开源平台。其中包含LightGBM等算法基于pytorch的实现，还自带Alpha158 和 Alpha360 因子库。（不是算好的因子参数，而是一套生成因子的算法）。
+LightGBM[<sup>1</sup>](#Ke2017)是在GBDT算法框架下的一种改进实现，是一种基于决策树算法[<sup>2</sup>](#Meng2016)的快速、分布式、高性能的GBDT框架。“Light”主要体现在三个方面，即更少的样本、更少的特征、更少的内存，分别通过单边梯度采样（Gradient-based One-Side Sampling）、互斥特征合并（Exclusive Feature Bundling）、直方图算法（Histogram）三项技术实现。“微矿 Qlib”[<sup>3</sup>](#yang2020qlib)是微软亚洲研究院2020年12月9日正式发布的AI量化投资开源平台。其中包含LightGBM等算法基于pytorch的实现，还自带Alpha158 和 Alpha360 因子库。（不是算好的因子参数，而是一套生成因子的算法）。
 
 ## 环境搭建
 
@@ -461,6 +461,24 @@ pip install pyppeteer
 （2）对于Portfolio Strategy（建立投资组合）的方法，在文档中只找到 [TopkDropoutStrategy](https://qlib.readthedocs.io/en/latest/component/strategy.html?highlight=TopkDropoutStrategy)一种实现。如需自定义组合构建方式，需要通过继承 qlib.contrib.strategy.BaseStrategy 类的方式创建新的策略类；
 
 （3）和QUANTAXIS项目面向全流程的功能相比，qlib侧重于策略开发、回测的择股环节。缺少择时交易部分的功能。Qlib如果想用于实盘，仍然需要大量工作。
+
+## 参考
+
+<div id="Ke2017"></div>
+
+- [1] KE G, MENG Q, FINLEY T, et al. Lightgbm: A highly efficient gradient boosting decision tree[J]. Advances in neural information processing systems, 2017, 30: 3146-3154.
+
+<div id="Meng2016"></div>
+
+- [2] MENG Q, KE G, WANG T, et al. A communication-efficient parallel algorithm for decision tree[A]. 2016.
+
+<div id="yang2020qlib"></div>
+
+- [3] YANG X, LIU W, ZHOU D, et al. Qlib: An ai-oriented quantitative investment platform[A]. 2020.
+
+<div id="yutiansut2016"></div>
+
+- [4] YUTIANSUT. quantaxis[EB/OL]. 2016. <https://github.com/QUANTAXIS/QUANTAXIS>.
 
 ---
 免责声明：
