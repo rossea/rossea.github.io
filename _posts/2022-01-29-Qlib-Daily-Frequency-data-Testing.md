@@ -252,7 +252,7 @@ examples/workflow_by_code.py 时，策略收益计算将出现异常。
 
 ### 安装QUANTAXIS
 
-QUANTAXIS\cite{yutiansut2016}项目进行了大量基础数据的整理工作。为了尽快获得数据，这里直接使用docker拉取QUANTAXIS的镜像进行安装。
+QUANTAXIS[<sup>4</sup>](#yutiansut2016)项目进行了大量基础数据的整理工作。为了尽快获得数据，这里直接使用docker拉取QUANTAXIS的镜像进行安装。
 
 ```sh
 cd /mnt/d/docker
