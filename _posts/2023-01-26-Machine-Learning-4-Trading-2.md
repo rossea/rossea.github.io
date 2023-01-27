@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Machine Learning for Algorithmic Trading 学习小记 （二）
-date: 2023-01-25
+date: 2023-01-26
 description: 在学习《机器学习与算法交易（第二版）》的过程中，发现一些琐碎的技术细节，特记录如下。本文主要记录笔者在学习第。
 ---
 
