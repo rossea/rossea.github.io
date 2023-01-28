@@ -7,7 +7,7 @@ description: 在学习《机器学习与算法交易（第二版）》的过程�
 
 ## 引言
 
-前文 [Machine Learning for Algorithmic Trading 学习小记（一）](https://rossea.github.io/2023-01-25-Machine-Learning-4-Trading-1/)介绍了笔者安装本书算例的过程。本文主要记录笔者在学习第1章和第2章中遇到的问题。
+前文 [Machine Learning for Algorithmic Trading 学习小记（一）](https://rossea.github.io/2023-01-25-Machine-Learning-4-Trading-1/)介绍了笔者安装本书算例的过程。本文主要记录笔者在学习第1章至第3章中遇到的问题。
 
 ## 第1章 机器学习交易：从构想到执行
 
@@ -175,6 +175,231 @@ cell[11]
 ```
 
 同理，继续分别处理“2016”、“2017”文件夹。
+
+---
+
+### 2.3.5.3  代码示例：Pandas 数据读取器
+
+```text
+machine-learning-for-trading-master
+  │
+  └───02_market_and_fundamental_data/
+      │
+      └───03_data_providers
+          │
+          └───01_pandas_datareader_demo.ipynb
+```
+
+用read_html函数访问网站上显示的数据
+
+#### 示例
+
+因为某些原因，以下地址需要代理才能访问。
+
+- 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
+
+- 'https://finance.yahoo.com/quote/FB/history?period1=1388548800&period2=1495684799&interval=1d&frequency=1d&filter=history'
+
+以下地址也无法访问：
+
+- Fama/French
+
+```text
+ConnectionError: HTTPConnectionPool(host='mba.tuck.dartmouth.edu', port=80): Max retries exceeded with url: /pages/faculty/ken.french/ftp/5_Industry_Portfolios_CSV.zip (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6434069040>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+```
+
+### 2.3.5.4 yfinance：Yahoo! 金融市场和基本数据
+
+```text
+machine-learning-for-trading-master
+  │
+  └───02_market_and_fundamental_data/
+      │
+      └───03_data_providers
+          │
+          └───02_yfinance_demo.ipynb
+```
+
+#### 示例
+
+因为某些原因，以下地址需要代理才能访问。
+
+- 'https://finance.yahoo.com/*
+
+### 2.3.5.5 LOBSTER Tick 数据基本数据
+
+```text
+machine-learning-for-trading-master/
+  │
+  └───02_market_and_fundamental_data/
+      │
+      └───03_data_providers/
+          │
+          └───03_lobster_itch_data.ipynb
+```
+
+#### 示例
+
+运行前需要先 [下载](https://lobsterdata.com/info/DataSamples.php) AMZN Level 10 示例数据。解压到
+“D:\src\python3\machine-learning-for-trading-master\02_market_and_fundamental_data\03_data_providers\data” 即可
+
+---
+
+### 2.3.5.6 Quandl
+
+```text
+machine-learning-for-trading-master/
+  │
+  └───02_market_and_fundamental_data/
+      │
+      └───03_data_providers/
+          │
+          └───04_quandl_demo.ipynb
+```
+
+#### 示例
+
+笔记本03_quandl_demo显示了Quandl如何使用非常简单的API来提供其免费和高级数据。
+
+可正常运行。
+
+### 2.3.5.7 Zipline 和 Qantopian
+
+```text
+machine-learning-for-trading-master/
+  │
+  └───02_market_and_fundamental_data/
+      │
+      └───03_data_providers/
+          │
+          └───05_zipline_data_demo.ipynb
+```
+
+#### 示例
+
+笔记本[包含笔记本zipline_data简要介绍了 zipline 我们将在本书中使用的回溯测试库，并展示了如何在进行回溯测试时访问股票价格数据。
+
+Qantopian 的免费数据服务已停止。
+
+### 2.4 如何使用基本数据
+
+基本数据与确定证券价值的经济动因有关。数据的性质取决于资产类别：我们将重点关注美国的股票基本面，因为美国的数据更易于访问。全球约有13,000多家上市公司，它们产生200万页的年度报告和30,000多个小时的收益电话。在算法交易中，基本数据和根据该数据设计的功能可用于直接导出交易信号，例如作为价值指标，并且是预测模型（包括机器学习模型）的基本输入。
+
+#### 2.4.1 财务报表数据
+
+证券交易委员会（SEC）要求美国发行人（即上市公司和证券，包括共同基金）除了各种形式外，还必须提交三份季度财务报表（表格10-Q）和一份年度报告（表格10-K）。其他监管备案要求。
+自1990年代初以来，SEC通过其电子数据收集，分析和检索（EDGAR）系统提供了这些文件。它们构成了对股权和其他证券（例如公司信贷）进行基础分析的主要数据源，其价值取决于发行人的业务前景和财务状况。
+
+### 2.4.2 使用XBRL标记进行自动处理
+
+自从SEC引入XBRL （一种用于电子表示和交换业务报告的免费，开放和全球性标准）以来，对监管文件的自动分析变得更加容易。XBRL基于XML。它依靠分类法来定义报告元素的含义，并映射到在报告的电子版本中突出显示相应信息的标签。一种这样的分类法代表了美国公认会计原则（GAAP）。
+
+SEC于2005年针对会计丑闻引入了自愿XBRL备案，此后自2009年以来对所有备案人都要求采用这种格式，并继续将强制性覆盖面扩大到其他监管备案。SEC维护着一个网站，该网站列出了影响不同文件内容的当前分类法，并可用于提取特定项目。
+
+有几种途径可以跟踪和访问向SEC报告的基本数据：
+
+- 对于股票和公司信贷，它包括公司财务以及行业和经济范围的数据。
+- 对于政府债券，它包括国际宏观数据和外汇。
+- 对于商品，它包括特定于资产的供求决定因子，例如农作物的天气数据。
+- 作为EDGAR公共传播服务（PDS）的一部分，可以接受收费的电子格式提要。
+- SEC每10分钟更新一次RSS提要，其中列出了结构化的披露提交。
+- 有公共索引文件，可通过FTP检索所有文件以进行自动处理。
+- 财务报表（和注释）数据集包含来自所有财务报表和随附注释的已解析XBRL数据。
+
+SEC还通过SEC.gov发布了包含EDGAR档案的互联网搜索流量的日志文件，尽管有六个月的延迟。
+
+### 2.4.3 建立基本数据时间序列
+
+在数据的范围财务报表及附注数据集，包括这些声明从主要财务报表数字数据（资产负债表，利润表，现金流量表，股东权益变动表和综合收益）和脚注。该数据最早于2009年可用。
+
+#### 示例
+
+可正常运行。
+
+### 2.3.5.7 Zipline 和 Qantopian
+
+```text
+machine-learning-for-trading-master/
+  │
+  └───02_market_and_fundamental_data/
+      │
+      └───04_sec_edgar/
+          │
+          └───edgar_xbrl.ipynb
+```
+
+本示例用于下载和解析XBRL格式的EDGAR数据，并通过结合财务报表和价格数据来创建诸如市盈率之类的基本指标。
+
+直接运行需要 90GB 磁盘空间。大约1小时左右。
+
+---
+
+### 2.5 Pandas 高效存储数据
+笔记本storage_benchmark比较主要存储格式的效率和性能。特别是，它比较：
+
+- CSV：逗号分隔的标准纯文本文件格式。
+- HDF5：分层数据格式，最初是在国家超级计算机中心开发的，是一种快速且可扩展的数字数据存储格式，可通过PyTables库在Pandas 中使用。
+- Parquet：二进制，列式存储格式，是Apache Hadoop生态系统的一部分，可提供有效的数据压缩和编码，由Cloudera和Twitter开发。在Pandas 的原始作者韦斯·麦金尼（Wes McKinney）领导的pyarrow库中，Pandas 可以使用它。
+
+它使用 DataFrame 可以配置为包含数字数据或文本数据，或同时包含两者的测试。对于HDF5库，我们同时测试了固定格式和表格格式。表格式允许查询，并且可以附加到表格式中。
+
+## 2.5.1 测试结果
+
+简而言之，结果是：
+
+- 对于纯数字数据，HDF5格式性能最佳，并且表格式也与CSV共享最小的内存占用空间，为1.6 GB。固定格式使用两倍的空间，而Parquet格式使用2 GB。
+- 对于数字和文本数据的混合，Parquet显着更快，并且HDF5相对于CSV利用其优势进行读取。
+
+```text
+machine-learning-for-trading-master/
+  │
+  └───02_market_and_fundamental_data/
+      │
+      └───05_storage_benchmark/
+          │
+          └───storage_benchmark.ipynb
+```
+
+说明了如何使用 %%timeit Cell Magic来配置，测试和收集时序。同时演示了使用这些存储格式所需的相关pandas命令的用法。
+
+## 第3章 替代交易数据
+
+本章所谓的 "替代交易数据" 主要指网络爬取的数据。
+
+注意：与所有其他示例不同，本章代码编写为在主机上运行，而不是使用 Docker 映像，因为它依赖于浏览器。
+
+因浏览器版本和对应selenium版本更新较快，变化较大，本章示例代码不具备调试价值。主要学习思路。
+
+### 替代数据革命
+
+对于算法交易，如果新数据源提供对传统来源无法获得的信息的访问，或者更快地提供访问，则它们将提供信息优势。随着全球趋势，投资行业正在迅速从市场和基本面数据扩展到其他来源，通过信息优势获得阿尔法。到3年，数据、技术能力和相关人才的年度支出预计将从目前的12亿美元每年增加8.2020%。
+
+如今，投资者可以实时访问宏观或公司特定的数据，这些数据历来只能以低得多的频率获得。新数据源的用例包括：
+
+- 一组具有代表性的商品和服务的在线价格数据可用于衡量通货膨胀
+
+- 商店访问或购买的次数允许实时估计公司或行业特定的销售或经济活动
+
+- 卫星图像可以揭示农业产量，或矿山或石油钻井平台上的活动，然后才能在其他地方获得这些信息。
+
+### 替代数据的来源
+
+替代数据集由许多来源生成，但可以在高级别分类为主要由以下来源生成：
+
+- 在社交媒体上发帖、评论产品或使用搜索引擎的个人
+- 记录商业交易（尤其是信用卡付款）或作为中介捕获供应链活动的企业
+- 除其他许多事项外，通过卫星或安全摄像头等图像或通过手机信号塔等运动模式捕获经济活动
+- 随着新数据源的出现以及以前标记为“替代”的来源成为主流的一部分，替代数据的性质继续迅速演变。例如，波罗的海干散货指数（BDI）收集了数百家航运公司的数据，以估算干散货船的供需情况，现在可以在彭博码头获得。
+
+替代数据源在关键方面有所不同，这些方面决定了它们对算法交易策略的价值或信号内容。
+
+### 评估替代数据集的标准
+
+替代数据的最终目标是在竞争性搜索中提供信息优势，以寻找产生阿尔法的交易信号，即正的、不相关的投资回报。在实践中，从替代数据集中提取的信号可以独立使用，也可以与其他信号结合使用，作为定量策略的一部分。
+
+此子文件夹01_opentable包含脚本opentable_selenium，用于使用 Scrapy 和 Selenium 抓取 OpenTable 数据。
+
+子文件夹02_earnings_calls包含脚本sa_selenium，用于从 SeekingAlpha 网站抓取收益电话会议记录。
 
 ---
 免责声明：
