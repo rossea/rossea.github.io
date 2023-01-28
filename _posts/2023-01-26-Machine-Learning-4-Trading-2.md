@@ -125,11 +125,14 @@ machine-learning-for-trading-master
 % matplotlib inline
 ```
 
-是可以在Ipython编译器里直接使用，功能是可以内嵌绘图，并且可以省略掉plt.show()这一步。要注释掉才能执行，否则会报错：
+是可以在Ipython编译器里直接使用，功能是可以内嵌绘图，并且可以省略掉plt.show()这一步。
+对于使用jupyter lab的同学，需要注释掉才能执行，否则会报错：
 
 ```text
 UsageError: Line magic function `%` not found.
 ```
+
+对于使用vscode和Docker插件的同学，无此问题。
 
 欲运行本示例，要[下载NASDAQ100 分钟线交易数据（大小4.2GB）](https://algoseek-public.s3.amazonaws.com/nasdaq100-1min.zip)。
 解压得到 “2015”、“2016”、“2017”三个文件夹。
