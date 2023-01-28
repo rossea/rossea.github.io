@@ -161,14 +161,14 @@ def extract_and_combine_data():
     data = pd.concat(data).apply(pd.to_numeric, downcast='integer')
     data.index.rename(['ticker', 'date_time'], inplace=True)
     print(data.info(show_counts=True))
-    + data.to_hdf(nasdaq_path / 'algoseek_2015.h5', 'min_taq')
-    - data.to_hdf(nasdaq_path / 'algoseek.h5', 'min_taq')
+-    data.to_hdf(nasdaq_path / 'algoseek.h5', 'min_taq')
++    data.to_hdf(nasdaq_path / 'algoseek_2015.h5', 'min_taq')
 ```
 
 ```diff
 cell[11]
-+ df = pd.read_hdf(nasdaq_path / 'algoseek_2015.h5', 'min_taq')
 - df = pd.read_hdf(nasdaq_path / 'algoseek_2015.h5', 'min_taq')
++ df = pd.read_hdf(nasdaq_path / 'algoseek_2015.h5', 'min_taq')
 ```
 
 同理，继续分别处理“2016”、“2017”文件夹。
