@@ -165,7 +165,7 @@ Docker version 20.10.22, build 3a2c30b
 > docker start -a -i ml4t
 ```
 
-镜像中的jupyter lab并不会自动启动，需要手工运行。
+镜像中的jupyter lab并不会自动启动，如果需要，可手工运行。
 
 ```sh
 (base) packt@8b57b786cab8:~/ml4t$ jupyter lab --ip 0.0.0.0 --no-browser --allow-root&
@@ -177,7 +177,7 @@ Docker version 20.10.22, build 3a2c30b
 http://127.0.0.1:8888/lab?token=2ae7a039d2f487c0cf3abafac511fda71c096ce13caa0f4a
 ```
 
-就可以开始下载数据进行投研了。
+因书中[算例](https://github.com/PacktPublishing/Machine-Learning-for-Algorithmic-Trading-Second-Edition)的格式大多是 .ipynb。笔者的习惯是，使用vscode的Docker插件进行编辑。
 
 ---
 免责声明：
