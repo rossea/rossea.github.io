@@ -2,12 +2,12 @@
 layout: post
 title: Machine Learning for Algorithmic Trading 学习小记（二）
 date: 2023-01-26
-description: 在学习《机器学习与算法交易（第二版）》的过程中，发现一些琐碎的技术细节，特记录如下。本文主要记录笔者在学习第1章和第2章中遇到的问题。
+description: 在学习《机器学习与算法交易（第二版）》的过程中，发现一些琐碎的技术细节，特记录如下。本文主要记录笔者在学习第1章至第3章中遇到的问题。
 ---
 
 ## 引言
 
-前文 [Machine Learning for Algorithmic Trading 学习小记（一）](https://rossea.github.io/2023-01-25-Machine-Learning-4-Trading-1/)介绍了笔者安装本书算例的过程。本文主要记录笔者在学习第1章至第3章中遇到的问题。
+前文 [Machine Learning for Algorithmic Trading 学习小记（一）](https://rossea.github.io/2023-01-25-Machine-Learning-4-Trading-1/)介绍了笔者安装本书算例的过程。本文主要记录笔者在学习第1章至第3章中遇到的问题。如果不做美国股票这三章，只需要大概了解。因后继章节会用到第二章获得的数据。
 
 ## 第1章 机器学习交易：从构想到执行
 
