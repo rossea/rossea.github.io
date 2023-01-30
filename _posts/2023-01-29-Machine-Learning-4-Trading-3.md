@@ -16,7 +16,7 @@ description: 本文主要记录笔者学习第4章的体会。
 
 ## 第4章 金融特征工程：如何研究 Alpha 因子
 
-本书中 Alpha 因子的概念源自基于Markowitz理论[<sup>1</sup>](#Markowitz1959) 的资本资产定价模型(Capital Asset Pricing Model, CAPM)  [<sup>2,</sup>](#Treynor1961)[<sup>3,</sup>](#Sharpe1964)[<sup>4,</sup>](#Lintner1975)[<sup>5</sup>](#Mossin1966) 。虽然在数学上等价，但是这四篇论文论述的角度不同[<sup>6</sup>](#Sullivan2006)：Treynor 受到 Modigliani and Miller 1958 理论的影响，因此他的着眼点是 Modigliani and Miller 定理中的命题一：企业的资本结构和它的价值无关。Sharpe 受 Markowitz 理论的影响，出发点是最优化投资组合的选择。Linter 的研究更关注通过发行股票融资的公司，并认为公司的财务政策非常重要。Mossin 的工作也来自投资组合理论，但是他关注的重点是资产市场的均衡条件。除此之外，还有其他区别[<sup>7</sup>](#French2003)。
+本书中 Alpha 因子的概念源自基于Markowitz理论[<sup>1</sup>](#Markowitz1959) 的资本资产定价模型(Capital Asset Pricing Model, CAPM)  [<sup>2,</sup>](#Treynor1961)[<sup>3,</sup>](#Sharpe1964)[<sup>4,</sup>](#Lintner1975)[<sup>5</sup>](#Mossin1966) 。虽然在数学上等价，但是这四篇论文论述的角度不同[<sup>6</sup>](#Sullivan2006)：Treynor 受到 Modigliani and Miller 理论的影响，因此他的着眼点是 Modigliani and Miller 定理中的命题一：企业的资本结构和它的价值无关。Sharpe 受 Markowitz 理论的影响，出发点是最优化投资组合的选择。Linter 的研究更关注通过发行股票融资的公司，并认为公司的财务政策非常重要。Mossin 的工作也来自投资组合理论，但是他关注的重点是资产市场的均衡条件。除此之外，还有其他区别[<sup>7</sup>](#French2003)。
 
 ### 模型假设
 因子模型的假设基于 Markowitz 描述过的市场投资理论, 即:
@@ -26,9 +26,7 @@ description: 本文主要记录笔者学习第4章的体会。
 - 投资者是理性的(rational), 即组合选择会根据期望收益和风险
 - 股票或资产没有交易成本, 允许卖空(short), 且收益可以全部投资(fully invested)
 
-
-
-对 CAPM 的常见表述是：
+### 对 CAPM 的常见表述
 特定投资组合的预期回报 $E[r_{a}]$ 可表述为：
 
 <!-- $$r_{p} - r_{f} = \beta_{a}(r_{m} - r_{f}) + \epsilon  \tag1$$ -->
