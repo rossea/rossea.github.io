@@ -152,8 +152,8 @@ notebook [ performance_eval_alphalens ](06_performance_eval_alphalens.ipynb) 引
 - [5] Mossin J. Equilibrium in a capital asset market[J]. Econometrica: Journal of the econometric society, 1966: 768-783.
 
 <div id="Sullivan2006"></div>
-- [6] Sullivan E J. A brief history of the capital asset pricing model[J]. APUBEF Proceedings, 2006: 207-210.
 
+- [6] Sullivan E J. A brief history of the capital asset pricing model[J]. APUBEF Proceedings, 2006: 207-210.
 
 <div id="French2003"></div>
 
