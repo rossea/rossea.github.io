@@ -2,6 +2,7 @@
 layout: post
 title: Machine Learning for Algorithmic Trading 学习小记（三）
 date: 2023-01-29
+math: true
 description: 本文主要记录笔者学习第4章的体会。
 ---
 
