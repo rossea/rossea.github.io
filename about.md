@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: post
+math: true
 title: About
 math: true
 permalink: /about/
