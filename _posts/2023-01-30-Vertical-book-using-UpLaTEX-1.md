@@ -3,7 +3,7 @@ layout: post
 title: 使用 UpLaTEX 和中文字体的纵书实践（一）
 date: 2023-01-30
 math: true
-description: 本文主要记录笔者使用 $\LaTEX$ 进行传统中文直书的尝试过程。
+description: 本文主要记录笔者使用 LaTEX 进行传统中文直书的尝试过程。
 ---
 
 # 使用 $UpLaTEX$ 和中文字体的纵书实践
