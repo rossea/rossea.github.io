@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用 $\upLaTeX$ 和中文字体的纵书实践（一）
+title: 使用 upLaTeX 和中文字体的纵书实践（一）
 date: 2023-01-30
 math: true
 categories: Fonts
