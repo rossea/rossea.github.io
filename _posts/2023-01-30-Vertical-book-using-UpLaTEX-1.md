@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 使用 \upLaTeX 和中文字体的纵书实践（一）
+title: 使用 $\upLaTeX$ 和中文字体的纵书实践（一）
 date: 2023-01-30
 math: true
 categories: Fonts
-description: 本文主要记录笔者使用 \LaTeX 进行传统中文直书的尝试过程。
+description: 本文主要记录笔者使用 $\LaTeX$ 进行传统中文直书的尝试过程。
 ---
 
 目前使用 $\LaTeX$ 进行中文纵书（亦称直书）排版主要有以下几个实现方法：
