@@ -55,7 +55,7 @@ pLaTeX是LaTeX的日语版本，运行在[pTeX](https://github.com/texjporg/plat
 % \documentclass[uplatex,tate]{jlreq}
 \documentclass{utbook}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%字体设置开始
+% 字体设置开始
 \DeclareFontFamily{JY2}{sourcehanrm}{}
 \DeclareFontFamily{JT2}{sourcehanrm}{}
 \DeclareFontShape{JY2}{sourcehanrm}{m}{n}{<->s*[0.962216]upschrm-h}{}
@@ -184,7 +184,7 @@ cp -r $(kpsewhich upstsl-v.tfm) upstsl02-v.tfm
 \NeedsTeXFormat{pLaTeX2e}
 \documentclass{utbook}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%字体设置开始
+% 字体设置开始
 \DeclareFontFamily{JY2}{sourcehanrm}{}
 \DeclareFontFamily{JT2}{sourcehanrm}{}
 \DeclareFontShape{JY2}{sourcehanrm}{m}{n}{<->s*[0.962216]upschrm-sourcehanrm-h}{}
@@ -206,7 +206,7 @@ cp -r $(kpsewhich upstsl-v.tfm) upstsl02-v.tfm
 \special{pdf:mapline utfjmr--v  unicode FZSJSONG15.TTF -w 1}
 }
 \DeclareRobustCommand\sourcehanrm{\kanjifamily{sourcehanrm}\selectfont}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%字体设置结束
+% 字体设置结束
 
 \usepackage{pxrubrica}%八登崇之的ruby包
 \rubysetup{g}% group && head
