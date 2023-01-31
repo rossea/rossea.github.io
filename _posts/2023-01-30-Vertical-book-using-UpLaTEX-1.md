@@ -6,11 +6,11 @@ math: true
 description: 本文主要记录笔者使用 LaTEX 进行传统中文直书的尝试过程。
 ---
 
-# 使用 $\UpLaTEX$ 和中文字体的纵书实践
+# 使用 UpLaTEX 和中文字体的纵书实践
 
-目前基于 $\LaTEX$ 中文纵书（亦称直书）主要有几个实现方法
+目前使用 LaTEX 进行中文纵书（亦称直书）排版主要有以下几个实现方法：
 
-## 一、使用 $\XeLaTEX$
+## 一、使用 XeLaTEX
 
 主要思路是，首先将汉字向右旋转90度：
 
@@ -33,7 +33,7 @@ description: 本文主要记录笔者使用 LaTEX 进行传统中文直书的尝
 另外，xelatex的宏包，比如fancy等，是基于横排设计的，设置页码、书名、章节名称等内容时，逻辑复杂。
 因为此种方法局限性太大，笔者未进一步尝试。
 
-## 二、使用 $\LuaLaTeX$
+## 二、使用 LuaLaTeX
 
 主要思路是使用LuaTeX-ja宏包实现中文直书。
 
@@ -44,7 +44,7 @@ LuaTeX-ja是一个宏包，用于使用Lua(La)TeX排版日语文本。该项目�
 缺点是，第一次运行时，速度极慢。另外现在lualatex还不够成熟，在展开一些字符空间比较大的字体（比如sourcehans等）时，容易崩溃。
 使用luatexja-otf宏包的UTF命令时，从UTF{F0000} 开始，取出的字形和实际码位不一致。
 
-## 三、使用 $\UpLaTeX$
+## 三、使用 UpLaTeX
 
 pLaTeX是LaTeX的日语版本，运行在pTeX上。 （带有日语排版扩展的TeX引擎）。（<https://github.com/texjporg/platex）>
 使用ptex进行日文纵书的文献可以追溯到1990年（<https://tug.org/TUGboat/tb11-3/tb29hamano.pdf）>
