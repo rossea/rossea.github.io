@@ -1,7 +1,7 @@
 # Welcome to Jekyll!
 
 title: rossea.github.io
-lang: en-US  # For correct hyphenation, we need set the language to en-US.
+lang: en-US  # For apply page style definding in .\_includes\head.html , we need set the language to en-US.
 baseurl: ""
 url: https://rossea.github.io/
 google_analytics: G-Y6ZL8Z19WD #数据流ID: 4450851715 衡量 ID: G-Y6ZL8Z19WD
