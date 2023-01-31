@@ -51,25 +51,25 @@ pLaTeX是LaTeX的日语版本，运行在[pTeX](https://github.com/texjporg/plat
 一个简单的例子如下：
 
 ```tex
-% !Tex=uplatex
-% \documentclass[uplatex,tate]{jlreq}
+% !Tex=uplatex % 
+
 \documentclass{utbook}
 
-% 字体设置开始
+% 字体设置开始 %
 \DeclareFontFamily{JY2}{sourcehanrm}{}
 \DeclareFontFamily{JT2}{sourcehanrm}{}
 \DeclareFontShape{JY2}{sourcehanrm}{m}{n}{<->s*[0.962216]upschrm-h}{}
 \DeclareFontShape{JT2}{sourcehanrm}{m}{n}{<->s*[0.962216]upschrm-v}{}
 
-\AtBeginDvi{%
+\AtBeginDvi{
 \special{pdf:mapline upstsl-h unicode SourceHanSerifSC-Regular.otf}
 \special{pdf:mapline upstsl-v unicode SourceHanSerifSC-Regular.otf -w 1}
 }
 \DeclareRobustCommand\sourcehanrm{\kanjifamily{sourcehanrm}\selectfont}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%字体设置结束
+% 字体设置结束 %
 
-% \usepackage{pxrubrica}%八登崇之的ruby包
-% \rubysetup{g}% group
+\usepackage{pxrubrica}%八登崇之的ruby包%
+\rubysetup{g}% group%
 
 \usepackage[uplatex]{otf} 
 
@@ -180,19 +180,18 @@ cp -r $(kpsewhich upstsl-v.tfm) upstsl02-v.tfm
 
 ```tex
 % !Tex=uplatex
-% \documentclass[uplatex,tate]{jlreq}
 \NeedsTeXFormat{pLaTeX2e}
 \documentclass{utbook}
 
-% 字体设置开始
+% 字体设置开始 %
 \DeclareFontFamily{JY2}{sourcehanrm}{}
 \DeclareFontFamily{JT2}{sourcehanrm}{}
 \DeclareFontShape{JY2}{sourcehanrm}{m}{n}{<->s*[0.962216]upschrm-sourcehanrm-h}{}
 \DeclareFontShape{JT2}{sourcehanrm}{m}{n}{<->s*[0.962216]upschrm-sourcehanrm-v}{}
 
-\AtBeginDvi{%
-% \special{pdf:mapline upstsl00-h unicode SourceHanSerifSC-Regular.otf}
-% \special{pdf:mapline upstsl00-v unicode SourceHanSerifSC-Regular.otf -w 1}
+\AtBeginDvi{
+% \special{pdf:mapline upstsl00-h unicode SourceHanSerifSC-Regular.otf}%
+% \special{pdf:mapline upstsl00-v unicode SourceHanSerifSC-Regular.otf -w 1}%
 
 \special{pdf:mapline upstsl00-h unicode A-OTF-UDReiminSC-GB4-Regular.otf}
 \special{pdf:mapline upstsl00-v unicode A-OTF-UDReiminSC-GB4-Regular.otf -w 1}
@@ -206,14 +205,13 @@ cp -r $(kpsewhich upstsl-v.tfm) upstsl02-v.tfm
 \special{pdf:mapline utfjmr--v  unicode FZSJSONG15.TTF -w 1}
 }
 \DeclareRobustCommand\sourcehanrm{\kanjifamily{sourcehanrm}\selectfont}
-% 字体设置结束
+% 字体设置结束 %
 
 \usepackage{pxrubrica}%八登崇之的ruby包
 \rubysetup{g}% group && head
 
 
 \usepackage[uplatex]{otf} 
-% \usepackage{bxbase} %使用UI命令调用字形
 
 \begin{document}
 \sourcehanrm
