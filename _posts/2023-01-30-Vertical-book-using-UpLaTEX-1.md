@@ -2,7 +2,6 @@
 layout: post
 title: 使用 UpLaTEX 和中文字体的纵书实践（一）
 date: 2023-01-30
-math: true
 description: 本文主要记录笔者使用 LaTEX 进行传统中文直书的尝试过程。
 ---
 
@@ -46,9 +45,9 @@ LuaTeX-ja是一个宏包，用于使用Lua(La)TeX排版日语文本。该项目�
 
 ## 三、使用 UpLaTeX
 
-pLaTeX是LaTeX的日语版本，运行在pTeX上。 （带有日语排版扩展的TeX引擎）。（<https://github.com/texjporg/platex）>
-使用ptex进行日文纵书的文献可以追溯到1990年（<https://tug.org/TUGboat/tb11-3/tb29hamano.pdf）>
-upLaTeX 是 pLaTeX（日语 LaTeX）的 Unicode 版本， 它运行在upTeX（具有更好Unicode支持的pTeX变体）上。 （<https://github.com/texjporg/uplatex）>
+pLaTeX是LaTeX的日语版本，运行在[pTeX](https://github.com/texjporg/platex)上。 （带有日语排版扩展的TeX引擎。）
+[使用ptex进行日文纵书的文献](https://tug.org/TUGboat/tb11-3/tb29hamano.pdf)可以追溯到1990年。
+[upLaTeX](https://github.com/texjporg/uplatex) 是 pLaTeX（日语 LaTeX）的 Unicode 版本， 它运行在upTeX（具有更好Unicode支持的pTeX变体）上。 
 一个简单的例子如下：
 
 ```tex
