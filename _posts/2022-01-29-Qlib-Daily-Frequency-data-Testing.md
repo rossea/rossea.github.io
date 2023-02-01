@@ -444,6 +444,35 @@ pip install pyppeteer
 
 ## 测试结果
 
+<figure>
+  <img src="/images/Qlib-Daily-Frequency-data-Testing/report_normal_df.png" alt="report_normal_df" style="max-width: 600px;">
+</figure>
+
+<figure>
+  <img src="/images/Qlib-Daily-Frequency-data-Testing/risk_analysis1.png" alt="risk_analysis1" style="max-width: 600px;">
+</figure>
+
+<figure>
+  <img src="/images/Qlib-Daily-Frequency-data-Testing/risk_analysis2.png" alt="risk_analysis2" style="max-width: 600px;">
+</figure>
+
+<figure>
+  <img src="/images/Qlib-Daily-Frequency-data-Testing/risk_analysis3.png" alt="risk_analysis3" style="max-width: 600px;">
+</figure>
+
+<figure>
+  <img src="/images/Qlib-Daily-Frequency-data-Testing/risk_analysis4.png" alt="risk_analysis4" style="max-width: 600px;">
+</figure>
+
+<figure>
+  <img src="/images/Qlib-Daily-Frequency-data-Testing/risk_analysis5.png" alt="risk_analysis5" style="max-width: 600px;">
+</figure>
+
+<figure>
+  <img src="/images/Qlib-Daily-Frequency-data-Testing/score_IC.png" alt="risk_analysis2" style="max-width: 600px;">
+</figure>
+
+
 ### 优势
 
 （1）Qlib全部使用python语言开发，确实降低 AI 算法使用门槛；
