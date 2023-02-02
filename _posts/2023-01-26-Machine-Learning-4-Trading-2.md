@@ -137,7 +137,21 @@ UsageError: Line magic function `%` not found.
 欲运行本示例，要[下载NASDAQ100 分钟线交易数据（大小4.2GB）](https://algoseek-public.s3.amazonaws.com/nasdaq100-1min.zip)。
 解压得到 “2015”、“2016”、“2017”三个文件夹。
 
-示例代码将在 D:\src\python3\machine-learning-for-trading-master\data\nasdaq100 目录下生成的 algoseek.h5 文件。但在 data.to_hdf() 步骤需要的物理内存大于32GB，因为我的笔记本电脑只有32GB内存，只能按照“年”为单位，划分为3个区间，对应生成 algoseek_2015.h5、 algoseek_2016.h5、 algoseek_2017.h5 三个文件。
+示例代码将在 D:\src\python3\machine-learning-for-trading-master\data\nasdaq100 目录下生成的 algoseek.h5 文件。但在 data.to_hdf() 步骤需要的内存大于15GB.
+
+我的笔记本电脑有32GB内存，可以直接运行。但需要增加swap分区的大小,保留7GB给宿主机系统使用，剩余全部当作可分配内存给wsl，将swap分区设置为25GB。
+具体方法是：在 $home/.wslconfig 文件中（若文件不存在，可手工创建）
+
+```sh
+[wsl2]
+processors=4
+memory=25GB
+swap=25GB
+localhostForwarding=true
+```
+
+
+如果内存较小，只能按照“年”为单位，划分为3个区间，对应生成 algoseek_2015.h5、 algoseek_2016.h5、 algoseek_2017.h5 三个文件。
 
 具体做法是 先把解压的“2015”文件夹放入到“D:\src\python3\machine-learning-for-trading-master\data\nasdaq100\1min_taq\”中，修改代码：
 
