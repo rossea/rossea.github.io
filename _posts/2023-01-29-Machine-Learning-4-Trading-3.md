@@ -51,27 +51,67 @@ $$\alpha = E[r_{a}] - \left(r_{f} + \beta_{a}(E[r_{m}] - r_{f})\right) \tag4$$
 以下代码示例
 
 #### 代码示例：如何使用 pandas 和 NumPy 设计因子
- 
-[ data ](00_data) 目录中的笔记本 [ feature_engineering.ipynb ](00_data/feature_engineering.ipynb)说明了如何设计基本因素。
- 
+
+```text
+machine-learning-for-trading-master
+  │
+  └───04_alpha_factor_research/
+      │
+      └───01_feature_engineering.ipynb
+```
+
+说明了如何设计基本因素。
+
+欲运行本示例，要使用 /home/packt/ml4t/data/create_datasets.ipynb ，创建 assets.h5 文件。
+首先，用 [NASDAQ account](https://data.nasdaq.com/sign-up) 登录， [下载](https://data.nasdaq.com/tables/WIKIP/WIKI-PRICES/export)  WIKI/PRICES 数据，重命名为 D:\src\python3\machine-learning-for-trading-master\data （大小：1.67GB）
+
+从[标普500](https://stooq.com/q/?s=%5Espx&c=1d&t=l&a=lg&b=0) 从左侧选择 Historical data ，将从1789年开始的Daily数据。下载文件存为。 ^spx_d.csv 。
+
 #### 代码示例：如何使用 TA-Lib 创建技术 alpha 因子
- 
-笔记本 [ how_to_use_talib ](02_how_to_use_talib.ipynb) 说明了 TA-Lib 的用法，其中包括广泛的常用技术指标。这些指标的共同点是它们仅使用市场数据，即价格和数量信息。
+
+```text
+machine-learning-for-trading-master
+  │
+  └───04_alpha_factor_research/
+      │
+      └───02_how_to_use_talib.ipynb
+```
+
+说明了 TA-Lib 的用法，其中包括广泛的常用技术指标。这些指标的共同点是它们仅使用市场数据，即价格和数量信息。
  
 **附录**中的笔记本 [ common_alpha_factors ](../24_alpha_factor_library/02_common_alpha_factors.ipynb)包含许多其他示例。
  
 #### 代码示例：如何使用卡尔曼滤波器对 Alpha 因子进行降噪
- 
-笔记本 [ kalman_filter_and_wavelets ](03_kalman_filter_and_wavelets.ipynb) 演示了使用PyKalman包进行平滑的卡尔曼滤波器的使用；我们还将在 [第 9 章](../09_time_series_models) 中开发配对交易策略时使用它。
- 
-#### 代码示例：如何使用小波预处理噪声信号
- 
-笔记本 [ kalman_filter_and_wavelets ](03_kalman_filter_and_wavelets.ipynb) 还演示了如何使用“PyWavelets”包处理小波。
+
+```text
+machine-learning-for-trading-master
+  │
+  └───04_alpha_factor_research/
+      │
+      └───03_kalman_filter_and_wavelets.ipynb
+```
+
+演示了使用PyKalman包进行平滑的卡尔曼滤波器的使用及如何使用“PyWavelets”包处理小波。我们还将在 [第 9 章](../09_time_series_models) 中开发配对交易策略时使用它。
 
 #### 代码示例：如何使用 Zipline 回测单因素策略
- 
-notebook [ single_factor_zipline ](04_single_factor_zipline.ipynb) 开发并测试了一个简单的均值回归因子，用于衡量近期表现偏离历史平均水平的程度。短期反转是一种常见的策略，它利用了弱预测模式，即股价上涨可能会在不到一分钟到一个月的时间范围内均值回落。
- 
+
+```text
+machine-learning-for-trading-master
+  │
+  └───04_alpha_factor_research/
+      │
+      └───04_single_factor_zipline.ipynb
+```
+
+开发并测试了一个简单的均值回归因子，用于衡量近期表现偏离历史平均水平的程度。短期反转是一种常见的策略，它利用了弱预测模式，即股价上涨可能会在不到一分钟到一个月的时间范围内均值回落。
+
+运行本示例需切换至 backtest 环境，并下载数据。
+
+```sh
+conda activate backtest
+zipline ingest -b quandl
+```
+
 #### 代码示例：在 Quantopian 平台上结合来自不同数据源的因素
  
 Quantopian 研究环境专为预测性 alpha 因子的快速测试而量身定制。这个过程非常相似，因为它建立在`zipline` 之上，但提供了更丰富的数据源访问。
@@ -81,8 +121,7 @@ Quantopian 研究环境专为预测性 alpha 因子的快速测试而量身定�
 #### 代码示例：分离信号和噪声——如何使用 alphalens
  
 notebook [ performance_eval_alphalens ](06_performance_eval_alphalens.ipynb) 引入了 [ alphalens ](http://quantopian.github.io/alphalens/) 库，用于预测(alpha)因子的性能分析，由 Quantopian 开源。它演示了它如何与我们将在下一章探讨的回测库`zipline`和投资组合绩效和风险分析库`pyfolio` 集成。
- 
- 
+
 #### 资源
  
 - [法玛法语](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html) 数据库
