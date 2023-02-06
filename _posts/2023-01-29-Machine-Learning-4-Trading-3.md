@@ -134,7 +134,6 @@ machine-learning-for-trading-master
 
 ```sh
 conda activate backtest
-zipline ingest -b quandl
 ```
 
 
