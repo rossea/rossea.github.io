@@ -112,15 +112,31 @@ conda activate backtest
 zipline ingest -b quandl
 ```
 
-#### 代码示例：在 Quantopian 平台上结合来自不同数据源的因素
+#### * 代码示例：在 Quantopian 平台上结合来自不同数据源的因子
  
 Quantopian 研究环境专为预测性 alpha 因子的快速测试而量身定制。这个过程非常相似，因为它建立在`zipline` 之上，但提供了更丰富的数据源访问。
  
-笔记本 [ multiple_factors_quantopian_research ](05_multiple_factors_quantopian_research.ipynb) 说明了如何不仅像以前那样从市场数据中计算 alpha 因子，而且还从基本面和替代数据中计算 alpha 因子。
- 
+笔记本 [ multiple_factors_quantopian_research ]([05_multiple_factors_quantopian_research.ipynb](https://github.com/PacktPublishing/Hands-On-Machine-Learning-for-Algorithmic-Trading/blob/336b3e622c8f161fc1844a5d06ae30b75809aba3/Chapter04/01_factor_research_evaluation/02_multiple_factors_quantopian_research.ipynb)) （这实际上是该书第一版中的示例） 说明了如何不仅像以前那样从市场数据中计算 alpha 因子，而且还从基本面和替代数据中计算 alpha 因子。
+因为 quantopian 服务已下架，所以在第二版的示例中已删除。
+
 #### 代码示例：分离信号和噪声——如何使用 alphalens
- 
-notebook [ performance_eval_alphalens ](06_performance_eval_alphalens.ipynb) 引入了 [ alphalens ](http://quantopian.github.io/alphalens/) 库，用于预测(alpha)因子的性能分析，由 Quantopian 开源。它演示了它如何与我们将在下一章探讨的回测库`zipline`和投资组合绩效和风险分析库`pyfolio` 集成。
+
+```text
+machine-learning-for-trading-master
+  │
+  └───04_alpha_factor_research/
+      │
+      └───06_performance_eval_alphalens.ipynb
+```
+
+用于预测(alpha)因子的性能分析，由 Quantopian 开源。它演示了它如何与我们将在下一章探讨的回测库`zipline`和投资组合绩效和风险分析库`pyfolio` 集成。
+运行本示例需切换至 backtest 环境，并使用 04_single_factor_zipline.ipynb 中下载的数据。
+
+```sh
+conda activate backtest
+zipline ingest -b quandl
+```
+
 
 #### 资源
  
