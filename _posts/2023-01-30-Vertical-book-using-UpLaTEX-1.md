@@ -190,11 +190,8 @@ cp -r $(kpsewhich upstsl-v.tfm) upstsl02-v.tfm
 \DeclareFontShape{JT2}{sourcehanrm}{m}{n}{<->s*[0.962216]upschrm-sourcehanrm-v}{}
 
 \AtBeginDvi{
-% \special{pdf:mapline upstsl00-h unicode SourceHanSerifSC-Regular.otf}%
-% \special{pdf:mapline upstsl00-v unicode SourceHanSerifSC-Regular.otf -w 1}%
-
-\special{pdf:mapline upstsl00-h unicode A-OTF-UDReiminSC-GB4-Regular.otf}
-\special{pdf:mapline upstsl00-v unicode A-OTF-UDReiminSC-GB4-Regular.otf -w 1}
+\special{pdf:mapline upstsl00-h unicode SourceHanSerifSC-Regular.otf}%
+\special{pdf:mapline upstsl00-v unicode SourceHanSerifSC-Regular.otf -w 1}%
 
 \special{pdf:mapline upstsl02-h unicode FZSJSONG02.TTF}
 \special{pdf:mapline upstsl02-v unicode FZSJSONG02.TTF -w 1}
