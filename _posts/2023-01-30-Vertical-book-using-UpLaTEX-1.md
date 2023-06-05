@@ -139,7 +139,7 @@ pdf_font>> Type0 font "SourceHanSerifSC-Regular.otf" cmap_id=<unicode,2> font_id
 在CODESPACE节加入：
 ```text
 U20000 U2FA1D UF0000 UF0001
-
+```
 同时修改：
 ```text
 (MAPFONT D 0
@@ -192,7 +192,7 @@ U20000 U2FA1D UF0000 UF0001
 编译upschrm-sourcehanrm-v.zvp
 ```sh
 jfmutil zvp2vf -u --lenient upschrm-sourcehanrm-v.zvp
-
+```
 接下来复制 upstsl-v
 
 ```sh
