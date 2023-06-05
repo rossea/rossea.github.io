@@ -136,7 +136,11 @@ pdf_font>> Type0 font "SourceHanSerifSC-Regular.otf" cmap_id=<unicode,2> font_id
 ```
 
 修改：upschrm-sourcehanrm-v.zvp
+在CODESPACE节加入：
+```text
+U20000 U2FA1D UF0000 UF0001
 
+同时修改：
 ```text
 (MAPFONT D 0
    (FONTNAME upstsl00-v)
@@ -146,6 +150,12 @@ pdf_font>> Type0 font "SourceHanSerifSC-Regular.otf" cmap_id=<unicode,2> font_id
    )
 (MAPFONT D 6
    (FONTNAME upstsl02-v)
+   (FONTCHECKSUM O 0)
+   (FONTAT R 1.0)
+   (FONTDSIZE R 10.0)
+   )
+(MAPFONT D 7
+   (FONTNAME upstsl15-v)
    (FONTCHECKSUM O 0)
    (FONTAT R 1.0)
    (FONTDSIZE R 10.0)
@@ -163,9 +173,26 @@ pdf_font>> Type0 font "SourceHanSerifSC-Regular.otf" cmap_id=<unicode,2> font_id
       (SETCHAR )
       )
    )
+(CHARACTER H F0000
+   (MAP
+      (SELECTFONT D 7)
+      (SETCHAR )
+      )
+   )
+(CHARACTER H F0001
+   (MAP
+      (SELECTFONT D 7)
+      (SETCHAR )
+      )
+   )
+
 ```
 
-理论上讲，要对 “D 6” 组中的所有字符的unicode进行映射，这里针对示例，仅影射了 U20000、U2FA1D两个字。
+理论上讲，要对 “D 6” 、 “D 7” 组中的所有字符的unicode进行映射，这里针对示例，仅影射了 U20000、U2FA1D、F0000、F0001。
+编译upschrm-sourcehanrm-v.zvp
+```sh
+jfmutil zvp2vf -u --lenient upschrm-sourcehanrm-v.zvp
+
 接下来复制 upstsl-v
 
 ```sh
@@ -174,6 +201,9 @@ cp -r $(kpsewhich upstsl-v.tfm) upstsl00-v.tfm
 
 cp -r $(kpsewhich upstsl-h.tfm) upstsl02-h.tfm
 cp -r $(kpsewhich upstsl-v.tfm) upstsl02-v.tfm
+
+cp -r $(kpsewhich upstsl-h.tfm) upstsl15-h.tfm
+cp -r $(kpsewhich upstsl-v.tfm) upstsl15-v.tfm
 ```
 
 将代码修改为：
@@ -199,7 +229,7 @@ cp -r $(kpsewhich upstsl-v.tfm) upstsl02-v.tfm
 \special{pdf:mapline upstsl15-h unicode FZSJSONG15.TTF}
 \special{pdf:mapline upstsl15-v unicode FZSJSONG15.TTF -w 1}
 
-\special{pdf:mapline utfjmr--v  unicode FZSJSONG15.TTF -w 1}
+\special{pdf:mapline utfjmr--v  unicode FZSJSONG15.TTF -w 1} % 使用CID/UTF命令调用
 }
 \DeclareRobustCommand\sourcehanrm{\kanjifamily{sourcehanrm}\selectfont}
 % 字体设置结束 %
