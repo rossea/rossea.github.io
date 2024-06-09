@@ -131,11 +131,15 @@ Docker version 20.10.22, build 3a2c30b
 ```sh
 
 > wsl --import docker-desktop D:\docker\wsl D:\docker\wsl\docker-desktop.tar --version 2
-  wsl --import docker-desktop-data D:\docker\date D:\docker\wsl\docker-desktop-data.tar --version 2
+  wsl --import docker-desktop-data D:\docker\data D:\docker\wsl\docker-desktop-data.tar --version 2
 
 ```
 
 ### 安装pytorch
+
+注意：到2024年，基于docker的cuda方案已经很成熟了。建议直接使用docker安装，不建议本地安装。
+
+------以下是以前的做法。
 
 为了利用显卡的算力，尽可能安装cuda版本的pytorch。
 
