@@ -38,7 +38,7 @@ jobs:
     # node v20 运行
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [24]
 
     steps:
       # 拉取代码
@@ -63,30 +63,31 @@ jobs:
           # version: 9
           run_install: false
 
-        # 安装依赖
-      - name: Install dependencies
-        run: pnpm install 
+      #   # 安装依赖
+      # - name: Install dependencies
+      #   run: pnpm install 
 
-      - name: add packages markdown-it-plugins
-        run: pnpm add ./install_pkg/stone-zeng-markdown-it-plugins-0.1.0.tgz -w
+      # - name: add packages markdown-it-plugins
+      #   run: pnpm add ./install_pkg/stone-zeng-markdown-it-plugins-0.1.0.tgz -w
 
-      - name: add packages vitepress-plugin-docfind
-        run: pnpm add ./install_pkg/stone-zeng-vitepress-plugin-docfind-0.1.0.tgz -w
+      # - name: add packages vitepress-plugin-docfind
+      #   run: pnpm add ./install_pkg/stone-zeng-vitepress-plugin-docfind-0.1.0.tgz -w
 
-      - name: add packages vitepress-plugin-feed
-        run: pnpm add ./install_pkg/stone-zeng-vitepress-plugin-feed-0.1.0.tgz -w
+      # - name: add packages vitepress-plugin-feed
+      #   run: pnpm add ./install_pkg/stone-zeng-vitepress-plugin-feed-0.1.0.tgz -w
 
       - name: Install packages
-        run: export PATH=\"$PWD/bin:$PATH\" && pnpm packages:test && pnpm packages:build 
+        # run: export PATH=\"$PWD/bin:$PATH\" && pnpm packages:test && pnpm packages:build 
+        run: pnpm install && mkdir -p bin && curl -L https://github.com/microsoft/docfind/releases/download/v0.5.1/docfind-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C bin && chmod +x bin/docfind && export PATH=$PWD/bin:$PATH && docfind --version
 
-      - name: patch packages
-        run: sed -i 's/\s\s\+u/ /g' '/home/runner/work/rossea.github.io/rossea.github.io/node_modules/.pnpm/@stone-zeng+vitepress-plugin-docfind@file+install_pkg+stone-zeng-vitepress-plugin-docfi_7cb20caafc47fb063f68f3f4088de19f/node_modules/@stone-zeng/vitepress-plugin-docfind/dist/index.js'
+      # - name: patch packages
+      #   run: sed -i 's/\s\s\+u/ /g' '/home/runner/work/rossea.github.io/rossea.github.io/node_modules/.pnpm/@stone-zeng+vitepress-plugin-docfind@file+install_pkg+stone-zeng-vitepress-plugin-docfi_7cb20caafc47fb063f68f3f4088de19f/node_modules/@stone-zeng/vitepress-plugin-docfind/dist/index.js'
 
         # 构建项目
       - name: Build blog project
         run: |
           echo ${{ github.workspace }}
-          pnpm vitepress build
+          pnpm packages:test && pnpm packages:build && pnpm build
 
         # 资源拷贝
       - name: Build with Jekyll
