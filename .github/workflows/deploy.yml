@@ -55,20 +55,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       # 使用 最新的 PNPM
-      # 你也可以指定为具体的版本
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         with:
           version: latest
-          # version: 9
           run_install: false
 
       - name: Install packages
-        # run: export PATH=\"$PWD/bin:$PATH\" && pnpm packages:test && pnpm packages:build 
         run: pnpm install && mkdir -p bin && curl -L https://github.com/microsoft/docfind/releases/download/v0.5.1/docfind-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C bin && chmod +x bin/docfind && export PATH=$PWD/bin:$PATH && docfind --version
 
-      #   # 安装依赖
-
+      #    安装自定义软件包依赖
       - name: add packages markdown-it-plugins
         run: pnpm add ./install_pkg/stone-zeng-markdown-it-plugins-0.1.0.tgz -w
 
@@ -78,10 +74,8 @@ jobs:
       - name: add packages vitepress-plugin-feed
         run: pnpm add ./install_pkg/stone-zeng-vitepress-plugin-feed-0.1.0.tgz -w
 
-      # - name: patch packages
-      #   run: sed -i 's/\s\s\+u/ /g' '/home/runner/work/rossea.github.io/rossea.github.io/node_modules/.pnpm/@stone-zeng+vitepress-plugin-docfind@file+install_pkg+stone-zeng-vitepress-plugin-docfi_7cb20caafc47fb063f68f3f4088de19f/node_modules/@stone-zeng/vitepress-plugin-docfind/dist/index.js'
-
         # 构建项目
+        # 注意：在 Github Actions 中，以前步骤导入 $PATH, 在本步骤中不会生效。所以，必须在每个 step 导入所需 $PATH。
       - name: Build blog project
         run: |
           echo ${{ github.workspace }}
