@@ -1,0 +1,37 @@
+{
+  "name": "@stone-zeng/markdown-it-plugins",
+  "version": "0.1.0",
+  "author": "Xiangdong Zeng <xdzeng96@gmail.com>",
+  "description": "Markdown-It plugins for rossea.github.io",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossea/rossea.github.io.git",
+    "directory": "packages/markdown-it-plugins"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run"
+  },
+  "packageManager": "pnpm@10.28.1",
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "vitest": "^4.0.18"
+  }
+}

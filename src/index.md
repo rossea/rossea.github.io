@@ -1,0 +1,4 @@
+---
+layout: home
+titleTemplate: false
+---
