@@ -30,6 +30,19 @@ concurrency:
 
 # 定义执行任务
 jobs:
+
+  # Cleanup job
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Delete deployment
+        uses: strumwolf/delete-deployment-environment@v2.3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+
   # 构建任务
   build:
 
@@ -91,6 +104,7 @@ jobs:
         # 上传 _site 的资源，用于后续部署
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+
 
   # 部署任务
   deploy:
